@@ -102,3 +102,11 @@ autoload -U compinit && compinit -u
 # ファンクション系読み込み
 . ~/.bash_functions
 
+# tmux
+if [ -z $TMUX ]; then
+    if $(tmux has-session); then
+        tmux attach
+    else
+        tmux
+    fi
+fi
