@@ -82,6 +82,9 @@ if has('vim_starting')
   NeoBundle 'tpope/vim-fugitive'
   NeoBundle 'gregsexton/gitv.git'
   NeoBundle 'everzet/phpfolding.vim'
+  NeoBundle 'b4b4r07/vim-shellutils'
+  NeoBundle 'wesleyche/SrcExpl'
+  NeoBundle 'szw/vim-tags'
 "  NeoBundle 'lunaru/vim-twig'
 
   " カラースキーマ
@@ -194,6 +197,22 @@ if has('vim_starting')
     let g:unite_source_grep_recursive_opt = ''
   endif
 
+  " src-expl
+  let g:SrcExpl_isUpdateTags = 1
+  nmap se :SrcExplToggle<CR>
+  let g:SrcExpl_pluginList = [
+    \ "__Tag_list__",
+    \ "_NERD_tree_"
+    \ ]
+  let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
+  let g:SrcExpl_updateTagsKey = "u"
+  let g:SrcExpl_prevDefKey = "p"
+  let g:SrcExpl_nextDefKey = "n"
+
+  " vim-tags
+  au BufNewFile,BufRead *.php let g:vim_tags_project_tags_command = "ctags --languages=php -n -R --PHP-types=f+c+d -f ~/php.tags `pwd` 2>/dev/null &"
+  noremap ,tg :TagsGenerate<CR>
+
   " quick-run
   noremap <silent> ,qp :QuickRun php<CR>
 
@@ -206,4 +225,11 @@ if has('vim_starting')
     call setpos(".", cursor)
     unlet cursor
   endfunction
+
+  " au BufNewFile,BufRead * set tags=call <SID>get_tag_files()
+  " function! s:get_tag_files()
+    " let tmpfiles = system("find ~/ -name *.tags | grep -v .git")
+    " let files = split(tmpfiles, "\n")
+    " echo join(files, ',')
+  " endfunction
 endif
