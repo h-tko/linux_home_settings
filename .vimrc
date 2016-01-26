@@ -65,6 +65,7 @@ if has('vim_starting')
   NeoBundle 'violetyk/neocomplete-php.vim'
   NeoBundle 'slim-template/vim-slim'
   NeoBundle 'YankRing.vim'
+  NeoBundle 'easymotion/vim-easymotion'
   NeoBundle 'ujihisa/unite-colorscheme'
   NeoBundle 'osyo-manga/vim-over'
   NeoBundle 'bling/vim-airline'
@@ -93,6 +94,7 @@ if has('vim_starting')
   NeoBundle 'vim-scripts/Zenburn'
   NeoBundle '29decibel/codeschool-vim-theme'
   NeoBundle 'syui/airsave.vim'
+  NeoBundle 'atelierbram/vim-colors_duotones.git'
 
   filetype plugin indent on
   filetype indent on
@@ -160,7 +162,7 @@ if has('vim_starting')
 
   call neobundle#end()
   set background=dark
-  colorscheme koehler
+  colorscheme delek
 
   " airsave
   nmap <Leader>s <Plug>(AutoWriteStart)
@@ -225,6 +227,15 @@ if has('vim_starting')
     call setpos(".", cursor)
     unlet cursor
   endfunction
+
+  " easymotion
+  map <Leader>f <Plug>(easymotion-bd-f)
+  nmap <Leader>f <Plug>(easymotion-overwin-f)
+  nmap s <Plug>(easymotion-overwin-f2)
+  map <Leader>L <Plug>(easymotion-bd-jk)
+  nmap <Leader>L <Plug>(easymotion-overwin-line)
+  map <Leader>w <Plug>(easymotion-bd-w)
+  nmap <Leader>w <plug>(easymotion-overwin-w)
 
   " au BufNewFile,BufRead * set tags=call <SID>get_tag_files()
   " function! s:get_tag_files()
