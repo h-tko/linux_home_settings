@@ -1,0 +1,97 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+
+  [plugins.build]
+  windows = 'tools\\update-dll-mingw'
+  cygwin  = 'make -f make_cygwin.mak'
+  mac     = 'make -f make_mac.mak'
+  linux   = 'make'
+  unix    = 'gmake'
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+
+[[plugins]]
+repo = 'Align'
+
+[[plugins]]
+repo = 'VimClojure'
+
+[[plugins]]
+repo = 'Shougo/vimshell'
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+
+[[plugins]]
+repo = 'neocomplcache'
+
+[[plugins]]
+repo = 'slim-template/vim-slim'
+
+[[plugins]]
+repo = 'YankRing.vim'
+
+[[plugins]]
+repo = 'osyo-manga/vim-over'
+
+[[plugins]]
+repo    = 'vim-airline/vim-airline'
+depends = ['vim-airline-themes']
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'Shougo/vimfiler'
+
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'SQLUtilities.git'
+
+[[plugins]]
+repo = 'L9'
+
+[[plugins]]
+repo = 'FuzzyFinder'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'gregsexton/gitv.git'
+
+[[plugins]]
+repo = 'everzet/phpfolding.vim'
+
+[[plugins]]
+repo = 'b4b4r07/vim-shellutils'
+
+[[plugins]]
+repo = 'wesleyche/SrcExpl'
+
+[[plugins]]
+repo = 'lunaru/vim-twig'
+
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'itchyny/landscape.vim'
+
+[[plugins]]
+repo = 'vim-scripts/Zenburn'
+
+[[plugins]]
+repo = '29decibel/codeschool-vim-theme'
+
+[[plugins]]
+repo = 'syui/airsave.vim'

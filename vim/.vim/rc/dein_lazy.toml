@@ -1,0 +1,43 @@
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+on_i = 1
+
+[[plugins]]
+repo = 'violetyk/neocomplete-php.vim'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo      = 'Shougo/neomru.vim'
+on_source = ['unite.vim']
+
+[[plugins]]
+repo      = 'Shougo/unite-outline'
+on_source = ['unite.vim']
+
+[[plugins]]
+repo      = 'ujihisa/unite-colorscheme'
+on_source = ['unite.vim']
+
+[[plugins]]
+repo = 'gregsexton/MatchTag'
+
+[[plugins]]
+repo = 'PDV--phpDocumentor-for-Vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdcommenter'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'szw/vim-tags'
+
+[[plugins]]
+repo = 'vim-scripts/dbext.vim'

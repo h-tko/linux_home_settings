@@ -36,65 +36,27 @@ hi FoldColumn gui=bold term=standout ctermbg=LightGray ctermfg=DarkBlue guibg=Gr
 filetype off
 
 if has('vim_starting')
-  set nocompatible
+  if &compatible
+    set nocompatible
+  endif
+  set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call dein#begin(expand('~/.vim/dein'))
 
-  call neobundle#begin(expand('~/.vim/bundle/'))
+  let s:toml      = '~/.vim/rc/dein.toml'
+  let s:lazy_toml = '~/.vim/rc/dein_lazy.toml'
 
-  NeoBundleFetch 'Shougo/neobundle.vim'
+  if dein#load_cache([expand('<sfile>'), s:toml, s:lazy_toml])
+    call dein#load_toml(s:toml,      {'lazy': 0})
+    call dein#load_toml(s:lazy_toml, {'lazy': 1})
+    call dein#save_cache()
+  endif
 
-  NeoBundle 'Shougo/neobundle.vim'
-  NeoBundle 'Shougo/vimproc', {
-    \ 'build' : {
-      \ 'unix' : 'make -f make_unix.mak',
-    \}
-  \}
+  call dein#end()
 
-  NeoBundle 'Align'
-  NeoBundle 'gregsexton/MatchTag'
-  NeoBundle 'PDV--phpDocumentor-for-Vim'
-  NeoBundle 'scrooloose/nerdcommenter'
-  NeoBundle 'VimClojure'
-  NeoBundle 'Shougo/vimshell'
-  NeoBundle 'Shougo/unite.vim'
-  NeoBundle 'Shougo/unite-outline'
-  NeoBundle 'ctrlpvim/ctrlp.vim'
-  NeoBundle 'Shougo/neocomplcache'
-  NeoBundle 'Shougo/neocomplete'
-  NeoBundle 'violetyk/neocomplete-php.vim'
-  NeoBundle 'slim-template/vim-slim'
-  NeoBundle 'YankRing.vim'
-  NeoBundle 'easymotion/vim-easymotion'
-  NeoBundle 'ujihisa/unite-colorscheme'
-  NeoBundle 'osyo-manga/vim-over'
-  NeoBundle 'bling/vim-airline'
-  NeoBundle 'thinca/vim-quickrun'
-  NeoBundle 't9md/vim-quickhl'
-  NeoBundle 'Shougo/vimfiler'
-  NeoBundle 'Shougo/neomru.vim'
-  NeoBundle 'Townk/vim-autoclose'
-  NeoBundle 'nathanaelkane/vim-indent-guides'
-  NeoBundle 'Shougo/neosnippet'
-  NeoBundle 'Shougo/neosnippet-snippets'
-  NeoBundle 'SQLUtilities.git'
-  NeoBundle 'L9'
-  NeoBundle 'FuzzyFinder'
-  NeoBundle 'tpope/vim-fugitive'
-  NeoBundle 'gregsexton/gitv.git'
-  NeoBundle 'everzet/phpfolding.vim'
-  NeoBundle 'b4b4r07/vim-shellutils'
-  NeoBundle 'wesleyche/SrcExpl'
-  NeoBundle 'szw/vim-tags'
-"  NeoBundle 'lunaru/vim-twig'
-
-  " カラースキーマ
-  NeoBundle 'tomasr/molokai'
-  NeoBundle 'itchyny/landscape.vim'
-  NeoBundle 'vim-scripts/Zenburn'
-  NeoBundle '29decibel/codeschool-vim-theme'
-  NeoBundle 'syui/airsave.vim'
-  NeoBundle 'atelierbram/vim-colors_duotones.git'
+  if dein#check_install()
+    call dein#install()
+  endif
 
   filetype plugin indent on
   filetype indent on
@@ -160,7 +122,6 @@ if has('vim_starting')
       autocmd FileType phpunit EnableFastPHPFolds
   augroup END
 
-  call neobundle#end()
   set background=dark
   colorscheme delek
 
@@ -236,6 +197,13 @@ if has('vim_starting')
   nmap <Leader>L <Plug>(easymotion-overwin-line)
   map <Leader>w <Plug>(easymotion-bd-w)
   nmap <Leader>w <plug>(easymotion-overwin-w)
+
+  " dbext
+  let dbext_default_profile=""
+  let dbext_default_dbname="kirei_kaigi_takeo"
+  let dbext_default_type="PGSQL"
+  let dbext_default_user="postgres"
+  nmap ,ql :DBExecSQL
 
   " au BufNewFile,BufRead * set tags=call <SID>get_tag_files()
   " function! s:get_tag_files()
