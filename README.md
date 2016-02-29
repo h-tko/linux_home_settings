@@ -3,8 +3,8 @@
 ## 先にNeoBundleを入れる
 
 ```bash
-$ mkdir -p ~/.vim/bundle
-$ git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+mkdir -p ~/.vim/dein/repos/github.com/Shougo/dein.vim
+git clone https://github.com/Shougo/dein.vim.git ~/.vim/dein/repos/github.com/Shougo/dein.vim
 ```
 
 ## oh-my-zshもいれる
