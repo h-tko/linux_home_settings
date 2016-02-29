@@ -95,3 +95,12 @@ repo = '29decibel/codeschool-vim-theme'
 
 [[plugins]]
 repo = 'syui/airsave.vim'
+
+[[plugins]]
+repo = 'ciaranm/inkpot'
+
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+
+[[plugins]]
+repo = 'vim-scripts/phd'
