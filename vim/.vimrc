@@ -123,7 +123,7 @@ if has('vim_starting')
   augroup END
 
   set background=dark
-  colorscheme delek
+  colorscheme inkpot
 
   " airsave
   nmap <Leader>s <Plug>(AutoWriteStart)
