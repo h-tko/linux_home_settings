@@ -15,10 +15,10 @@ repo = 'Shougo/vimproc.vim'
 repo = 'Shougo/neosnippet'
 
 [[plugins]]
-repo = 'Align'
+repo = 'vim-scripts/Align'
 
 [[plugins]]
-repo = 'VimClojure'
+repo = 'vim-scripts/VimClojure'
 
 [[plugins]]
 repo = 'Shougo/vimshell'
@@ -27,13 +27,13 @@ repo = 'Shougo/vimshell'
 repo = 'ctrlpvim/ctrlp.vim'
 
 [[plugins]]
-repo = 'neocomplcache'
+repo = 'vim-scripts/neocomplcache'
 
 [[plugins]]
 repo = 'slim-template/vim-slim'
 
 [[plugins]]
-repo = 'YankRing.vim'
+repo = 'vim-scripts/YankRing.vim'
 
 [[plugins]]
 repo = 'osyo-manga/vim-over'
@@ -55,13 +55,10 @@ repo = 'Townk/vim-autoclose'
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
-repo = 'SQLUtilities.git'
+repo = 'vim-scripts/L9'
 
 [[plugins]]
-repo = 'L9'
-
-[[plugins]]
-repo = 'FuzzyFinder'
+repo = 'vim-scripts/FuzzyFinder'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
