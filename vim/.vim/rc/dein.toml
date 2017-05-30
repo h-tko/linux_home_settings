@@ -101,3 +101,6 @@ repo = 'nanotech/jellybeans.vim'
 
 [[plugins]]
 repo = 'vim-scripts/phd'
+
+[[plugins]]
+repo = 'fatih/vim-go'
